@@ -77,7 +77,7 @@ export default function Registration() {
               value="male"
               checked={gender === "male"}
               onChange={(e) => setGender(e.target.value)}
-          />{" "} Male
+          /> Male
           </label>
           <label className="radio">
             <input
@@ -86,14 +86,14 @@ export default function Registration() {
               value="female"
               checked={gender === "female"}
               onChange={(e) => setGender(e.target.value)}
-          />{" "} Female
+          /> Female
           </label>
           {errors.gender && <p className="error">{errors.gender}</p>}
         </fieldset>
 
           {/*Disable the submit button until all requirements met*/}
 
-        <button type="submit">Register</button>
+        <button type="submit" disabled={!email || !password || !gender}>Register</button>
       </form>
 
       <div className="card info">
